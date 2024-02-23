@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.question-container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.question {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #eee;
+}
+
+.more-options {
+  text-align: center;
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.more-options a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+.more-options a:hover {
+  text-decoration: underline;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.time-label {
+  font-size: 0.8em;
+  color: #aaa;
+}
+
+.time-value {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.reply-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.reply-button:hover {
+  background-color: #449d44;
+}
+</style>
+</head>
+<body>
+<div class="question-container">
+  <div class="question">What's on your mind?</div>
+  <div class="options">
+    <div class="option">Option #1</div>
+    <div class="option">Option #2</div>
+    <div class="option">
+    Option #3
+    </div>
+  </div>
+  <button class="reply-button js-add-more">+</button>
+  <button class="reply-button">Cancel</button>
+  <button class="reply-button">Create</button>
+</div>
+<script>
+  const addMoreBtn = document.querySelector('.js-add-more');
+
+  addMoreBtn.addEventListener('click', () => {
+    const newOption = document.createElement('div');
+    newOption.classList.add('option');
+    newOption.innerHTML = '<input type="text" placeholder="Enter your option">';
+    document.querySelector('.options').appendChild(newOption);
+  });
+</script>
+</body>
+</html>
+
